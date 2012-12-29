@@ -9,6 +9,7 @@ class LLNode{
 public class LList {
 
 	LLNode head=null;
+	int score;
 
 	public void addToList(Node newnode){
 
@@ -17,7 +18,7 @@ public class LList {
 		tmp.score = newnode.score;
 		tmp.place = newnode.place;
 		tmp.next = null;
-	
+	    score+=tmp.score;
 		if(head==null){
 			head = tmp;
 		}else{
@@ -31,6 +32,8 @@ public class LList {
 		if(head==null)
 			return;
 		else{
+
+		    score-=head.score;
 			head = head.next;
 		}
 	}
@@ -71,5 +74,10 @@ public class LList {
 		}
 		
 		return false;
+	}
+
+	public int getscore() {
+		// TODO Auto-generated method stub
+		return score;
 	}
 }
