@@ -13,6 +13,7 @@ public class Node {
 	public void setPlace(String place) {
 		this.place = place;
 	}
+	
 	public int getScore() {
 		return score;
 	}

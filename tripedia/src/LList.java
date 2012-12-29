@@ -58,6 +58,7 @@ public class LList {
 		}
 		
 		System.out.print(" ------ ");
+		
 		System.out.println("Score " + score);
 	}
 

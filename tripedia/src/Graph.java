@@ -18,7 +18,7 @@ public class Graph {
 	public void addEdge(Node s, Node e, int cost){
 
 		matrix[s.index][e.index] = e;
-		matrix[e.index][s.index] = e;
+		matrix[e.index][s.index] = s;
 		
 		e.cost=cost;
 	}

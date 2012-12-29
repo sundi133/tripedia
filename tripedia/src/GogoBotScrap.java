@@ -26,6 +26,7 @@ public class GogoBotScrap {
 				tmp.score=i+1;
 				tmp.cost=0;
 				g.addNode(tmp);
+				
 
 			}
 			

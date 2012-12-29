@@ -14,6 +14,7 @@ public class Edge {
 	public int getTo() {
 		return to;
 	}
+	
 	public void setTo(int to) {
 		this.to = to;
 	}
