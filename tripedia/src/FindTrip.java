@@ -43,7 +43,7 @@ public class FindTrip {
 		g.addEdge(tmp3, tmp4, 30);
 		g.addEdge(tmp4, tmp2, 40);
 		
-		int score = 40;
+		int score = 50;
 		
 		g.bfsdistance(tmp4,score);
 		
