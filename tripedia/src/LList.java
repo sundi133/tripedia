@@ -62,7 +62,7 @@ public class LList {
 		
 		System.out.print(" ------ ");
 		
-		System.out.println("Score " + score);
+		System.out.println("Total Ttime " + score);
 	}
 
 	public boolean exists(Node node) {

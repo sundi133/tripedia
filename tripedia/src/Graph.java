@@ -81,5 +81,18 @@ public class Graph {
 		return null;
 	}
 
+	public void addEdgeByIndex(int i, int j, Long time) {
+		
+		Node src =  new Node();
+		src.cost  =  time.intValue();
+		src.index = matrix[j][j].index;
+		src.place = matrix[j][j].place;
+		src.score = matrix[j][j].score;
+		src.isVisited = false;
+		
+		matrix[i][j] = src;
+		
+	}
+
 
 }
