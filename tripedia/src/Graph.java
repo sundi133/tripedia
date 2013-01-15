@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Stack;
 
 
@@ -24,40 +26,49 @@ public class Graph {
 		s.cost = cost;
 	}
 
-	public void bfsdistance(Node s, int score){
+	
+	
+	
+	public ArrayList<Path> bfsdistance(Node s, int score){
 
 		Stack<Node> st = new Stack<Node>();
-
 		LList allpaths = new LList();
 		allpaths.addToList(s);
 		st.push(s);
+		ArrayList<Path> paths = new ArrayList<Path>();
 		while(!st.isEmpty()){
 			Node curr = st.peek();
-			//System.out.println("curr index---"+curr.index);
-			
 			Node tmp = findNext(curr);
 			if(tmp==null){
-				//print path
-				//System.out.println("display");
-				allpaths.display();
-				st.pop();
+				Path p = allpaths.display(s.place,s.score);
+				paths.add(p);
+				Node removed = st.pop();
 				allpaths.remove();
-				
 			}
 			else{
-				//System.out.println(tmp.index +"t"+ (tmp.isVisited));
 				if(allpaths.exists(tmp)){
-					//System.out.println("Path exists");
-					
 					continue;
 				}
-				if(allpaths.getscore() + tmp.score > score){
+				if(allpaths.getcost() + tmp.cost > score){
 					continue;
 				}
 				allpaths.addToList(tmp);
 				st.push(tmp);
 			}
 		}
+		
+		markAllUnvisted();
+		return paths;
+	}
+ 
+	private void markAllUnvisted() {
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[0].length; j++) {
+				if(matrix[i][j]!=null)
+					matrix[i][j].isVisited=false;
+			}
+		}
+		
 	}
 
 	private Node findNext(Node curr) {
@@ -91,6 +102,25 @@ public class Graph {
 		src.isVisited = false;
 		
 		matrix[i][j] = src;
+		
+	}
+
+	public void printgraph() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < matrix.length; i++) {
+			
+			for (int j = 0; j < matrix[0].length; j++) {
+				if(matrix[i][j]!=null){
+					System.out.print(i + "," +j + "," +matrix[i][j].index + "," +matrix[i][j].cost + " ");
+							
+				}else{
+					//System.out.print("0,0 ");
+					
+				}
+				
+			}
+			System.out.println();
+		}
 		
 	}
 

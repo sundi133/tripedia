@@ -22,5 +22,20 @@
 	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/commons-io-2.4-bin/commons-io-2.4/commons-io-2.4-test-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/argo-3.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/geronimo-jta_1.1_spec-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/lucene-core-3.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-cypher-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-graph-algo-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-graph-matching-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-jmx-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-kernel-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-lucene-index-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-management-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-shell-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/neo4j-udc-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/org.apache.servicemix.bundles.jline-0.9.94_1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/scala-library-2.9.1-1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/neo4j/neo4j-advanced-1.8.1-windows/neo4j-advanced-1.8.1/lib/server-api-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Owner/Downloads/mongo-2.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
