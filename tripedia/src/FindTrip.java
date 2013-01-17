@@ -154,9 +154,8 @@ public class FindTrip {
 
 
 
-		//g.addEdgeByIndex(i,j,)
 		String jsonTxt;
-		try {
+		/*try {
 			jsonTxt = readJsonFromUrl("http://www.mapquestapi.com/directions/v1/routematrix?key=Fmjtd%7Cluuan101ng%2C7w%3Do5-9685gz&callback=renderMatrixResults");
 			int beg = "renderMatrixResults".length()+1;
 			int end = jsonTxt.length()-2;
@@ -188,22 +187,35 @@ public class FindTrip {
 			e.printStackTrace();
 		}
 
-		/*for (int k = 0; k < 13; k++) {
+		*/
+		for (int k = 0; k < 13; k++) {
 			for (int k2 = 0; k2 < 13; k2++) {
 				g.addEdgeByIndex(k+1,k2+1, (long) k*k2);
 
 			}
-		}*/
+		}
 
 
 		for (int i = 0; i < listOfNodes.size(); i++) {
-
-			//System.out.println(listOfNodes.get(i).place);
 			ArrayList<Path> paths = g.bfsdistance(listOfNodes.get(i),score);
-
 			insertToDb(listOfNodes.get(i).place, listOfNodes.get(i).score,paths);
 		}
 
+		displayDb();
+	}
+
+
+	private static void displayDb() {
+		DBCollection coll = db.getCollection("tripcollection");
+		System.out.println(coll.getCount() );	        
+		DBCursor cursor = coll.find();
+		try {
+			while(cursor.hasNext()) {
+				System.out.println(cursor.next());
+			}
+		} finally {
+			cursor.close();
+		}
 	}
 
 
@@ -216,10 +228,8 @@ public class FindTrip {
 			db = mongo.getDB("tripedia");
 			dropcoll(db);
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 
@@ -228,28 +238,17 @@ public class FindTrip {
 
 		try {
 			DBCollection coll = db.getCollection("tripcollection");
-			BasicDBObject doc = new BasicDBObject();
-			doc.put("name", place);
-			doc.put("popularity", place_score);
-
+			
 			for (int i=0; i < paths.size(); i++) {
-				BasicDBObject indoc = new BasicDBObject();
-				indoc.put("cost", paths.get(i).getCost());
-				indoc.put("score",paths.get(i).getScore());
-				indoc.put("path",paths.get(i).getPath());
-				doc.put(Integer.toString(i),indoc);
-			}
-			coll.insert(doc);
-
-			System.out.println(coll.getCount() );	        
-			DBCursor cursor = coll.find();
-			try {
-				while(cursor.hasNext()) {
-					System.out.println(cursor.next());
-				}
-			} finally {
-				cursor.close();
-			}
+				BasicDBObject doc = new BasicDBObject();
+				doc.put("name", place);
+				doc.put("popularity", place_score);
+				doc.put("time", paths.get(i).getCost());
+				doc.put("pathpopularity",paths.get(i).getScore());
+				doc.put("path",paths.get(i).getPath());
+				coll.save(doc);
+ 			}
+			
 		} catch (MongoException e) {
 			e.printStackTrace();
 		}
